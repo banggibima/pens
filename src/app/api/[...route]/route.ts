@@ -23,7 +23,7 @@ app.get("/search-rooms", async (c) => {
     const engine = c.req.query("engine")?.toLowerCase();
 
     if (engine !== "redis") {
-      return c.json({ error: "Invalid engine" }, { status: 400 });
+      return c.json({ error: "Postgres belum kena, dibilangin pake Redis dulu" }, { status: 400 });
     }
 
     const query = c.req.query("query")?.toUpperCase();

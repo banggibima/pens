@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Page() {
@@ -35,9 +36,8 @@ export default function Page() {
           <div className="flex flex-col gap-y-4 items-center justify-center w-full">
             <h1 className="text-4xl leading-normal font-bold text-neutral-800 dark:text-neutral-200">Cari Ruang di PENS</h1>
             <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
-              Sebuah aplikasi pencarian ruang di PENS menggunakan Next.js dan Hono KV Store di Vercel Serverless Functions
-              dengan Redis dan Postgres sebagai database penyimpanan. Ketik nama ruang yang ingin dicari di kolom pencarian
-              di bawah ini.
+              Sebuah aplikasi pencarian ruang di PENS pake Next.js dan Hono KV Store di Vercel Serverless Functions dengan
+              Redis dan Postgres buat database storage. Ketik nama ruang yang pengen dicari di kolom pencarian di bawah ini.
             </p>
           </div>
           <div className="flex flex-col gap-y-8 w-full">
@@ -75,14 +75,14 @@ export default function Page() {
               ) : (
                 <div className="w-full flex flex-col gap-y-4 mt-4 mb-4 items-center justify-center">
                   <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
-                    Ruang tidak ditemukan
+                    Ruang ga ditemukan
                   </p>
                 </div>
               )}
               {!search?.error && search && (
                 <div className="flex flex-col w-full justify-center items-start">
                   <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
-                    {search?.results?.length} results found in {search?.time?.toFixed(2)}ms
+                    {search?.results?.length} hasil ditemukan dalam {search?.time} ms
                   </p>
                 </div>
               )}
@@ -124,7 +124,24 @@ export default function Page() {
                 </button>
               </div>
               <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
-                {selected === "redis" ? "Redis Engine is on" : "Service is not available"}
+                {selected === "redis" ? "Redisnya nyala nih" : "Postgresnya masih belum dibenerin"}
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-y-4 mt-24 items-center justify-center">
+            <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
+              kalo klean tertarik terus pengen kontribusi, cuss langsung ke{" "}
+              <Link href="https://github.com/banggibima/pens" className="text-blue-500 dark:text-blue-400">
+                sini
+              </Link>
+            </p>
+            <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
+              masih pemula dibuat pake ❤️
+            </p>
+            <div className="flex flex-row gap-x-3">
+              <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">© 2021</p>
+              <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
+                <code>D3 IT PENS</code>
               </p>
             </div>
           </div>
