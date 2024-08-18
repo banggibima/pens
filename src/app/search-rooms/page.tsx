@@ -30,7 +30,7 @@ export default function Page() {
   }, [input]);
 
   return (
-    <div className="h-screen flex items-start justify-center pt-32 bg-neutral-100 dark:bg-neutral-900">
+    <div className="min-h-screen flex items-start justify-center pt-32 bg-neutral-100 dark:bg-neutral-900">
       <div className="mx-auto max-w-xl w-full px-8 sm:px-0 lg:px-0">
         <div className="flex flex-col gap-y-4 items-center justify-center">
           <div className="flex flex-col gap-y-4 items-center justify-center w-full">
@@ -128,7 +128,7 @@ export default function Page() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col gap-y-4 mt-24 items-center justify-center">
+          <div className="flex flex-col gap-y-4 mt-24 mb-24 items-center justify-center">
             <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
               kalo klean tertarik terus pengen kontribusi, cuss langsung ke{" "}
               <Link href="https://github.com/banggibima/pens" className="text-blue-500 dark:text-blue-400">
