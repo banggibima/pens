@@ -30,12 +30,12 @@ export default function Page() {
   }, [input]);
 
   return (
-    <div className="min-h-screen flex items-start justify-center pt-32 bg-neutral-100 dark:bg-neutral-900">
+    <div className="min-h-screen flex items-start justify-center pt-32 bg-zinc-100 dark:bg-zinc-900">
       <div className="mx-auto max-w-xl w-full px-8 sm:px-0 lg:px-0">
         <div className="flex flex-col gap-y-4 items-center justify-center">
           <div className="flex flex-col gap-y-4 items-center justify-center w-full">
-            <h1 className="text-4xl leading-normal font-bold text-neutral-800 dark:text-neutral-200">Cari Ruang di PENS</h1>
-            <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
+            <h1 className="text-4xl leading-normal font-bold text-zinc-600 dark:text-zinc-400">Cari Ruang di PENS</h1>
+            <p className="text-sm text-center leading-normal font-medium text-zinc-600 dark:text-zinc-400">
               Sebuah aplikasi pencarian ruang di PENS pake Next.js dan Hono KV Store di Vercel Serverless Functions dengan
               Redis dan Postgres buat database storage. Ketik nama ruang yang pengen dicari di kolom pencarian di bawah ini.
             </p>
@@ -44,7 +44,7 @@ export default function Page() {
             <div className="flex flex-col w-full">
               <input
                 type="text"
-                className="w-full px-4 py-2 text-sm leading-normal font-medium border rounded-lg bg-transparent text-neutral-800 dark:text-neutral-200 border-neutral-200 dark:border-neutral-800 bg-neutral-200 dark:bg-neutral-800 focus:outline-none"
+                className="w-full px-4 py-2 text-sm leading-normal font-medium border rounded-lg bg-transparent text-zinc-600 dark:text-zinc-400 border-zinc-200 dark:border-zinc-800 bg-zinc-200 dark:bg-zinc-800 focus:outline-none"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
               />
@@ -52,16 +52,16 @@ export default function Page() {
                 <div
                   className={`${
                     search?.results?.length === 0 ? "hidden" : "mt-4 mb-4 block"
-                  } w-full overflow-x-auto rounded-lg bg-neutral-200 dark:bg-neutral-800`}
+                  } w-full overflow-x-auto rounded-lg bg-zinc-200 dark:bg-zinc-800`}
                 >
-                  <table className="w-full divide-y divide-neutral-100 dark:divide-neutral-900">
-                    <tbody className="divide-y divide-neutral-100 dark:divide-neutral-900">
+                  <table className="w-full divide-y divide-zinc-100 dark:divide-zinc-900">
+                    <tbody className="divide-y divide-zinc-100 dark:divide-zinc-900">
                       {search?.results?.map((room: any, index: number) => (
                         <tr key={index}>
                           <td className="whitespace-wrap px-4 py-2">
                             <div className="flex flex-row gap-x-3 justify-between items-center">
                               <div className="flex flex-row gap-x-3">
-                                <span className="text-sm text-left leading-normal font-medium text-neutral-600 dark:text-neutral-400">
+                                <span className="text-sm text-left leading-normal font-medium text-zinc-600 dark:text-zinc-400">
                                   {room}
                                 </span>
                               </div>
@@ -74,14 +74,14 @@ export default function Page() {
                 </div>
               ) : (
                 <div className="w-full flex flex-col gap-y-4 mt-4 mb-4 items-center justify-center">
-                  <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
+                  <p className="text-sm text-center leading-normal font-medium text-zinc-600 dark:text-zinc-400">
                     Ruang ga ditemukan
                   </p>
                 </div>
               )}
               {!search?.error && search && (
                 <div className="flex flex-col w-full justify-center items-start">
-                  <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
+                  <p className="text-sm text-center leading-normal font-medium text-zinc-600 dark:text-zinc-400">
                     {search?.results?.length} hasil ditemukan dalam {search?.time} ms
                   </p>
                 </div>
@@ -123,24 +123,24 @@ export default function Page() {
                   <span className="text-sm leading-normal font-medium text-white">Redis</span>
                 </button>
               </div>
-              <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
+              <p className="text-sm text-center leading-normal font-medium text-zinc-600 dark:text-zinc-400">
                 {selected === "redis" ? "Redisnya nyala nih" : "Postgresnya masih belum dibenerin"}
               </p>
             </div>
           </div>
           <div className="flex flex-col gap-y-4 mt-24 mb-24 items-center justify-center">
-            <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
+            <p className="text-sm text-center leading-normal font-medium text-zinc-600 dark:text-zinc-400">
               kalo klean tertarik terus pengen kontribusi, cuss langsung ke{" "}
               <Link href="https://github.com/banggibima/pens" className="text-blue-500 dark:text-blue-400">
                 sini
               </Link>
             </p>
-            <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
+            <p className="text-sm text-center leading-normal font-medium text-zinc-600 dark:text-zinc-400">
               masih pemula dibuat pake ❤️
             </p>
             <div className="flex flex-row gap-x-3">
-              <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">© 2021</p>
-              <p className="text-sm text-center leading-normal font-medium text-neutral-600 dark:text-neutral-400">
+              <p className="text-sm text-center leading-normal font-medium text-zinc-600 dark:text-zinc-400">© 2021</p>
+              <p className="text-sm text-center leading-normal font-medium text-zinc-600 dark:text-zinc-400">
                 <code>D3 IT PENS</code>
               </p>
             </div>
